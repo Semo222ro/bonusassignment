@@ -33,14 +33,14 @@ void heapSort(int arr[], int n)
 	for (int i = n / 2 - 1; i >= 0; i--) 
 	{
         int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+        int l = 2 * i + 1;
+        int r = 2 * i + 2;
 
-        if (left < n && arr[left] > arr[largest])
-            largest = left;
+        if (l < n && arr[l] > arr[largest])
+            largest = l;
 
-        if (right < n && arr[right] > arr[largest])
-            largest = right;
+        if (r < n && arr[r] > arr[largest])
+            largest = r;
 
         if (largest != i) {
             int temp = arr[i];
@@ -90,7 +90,8 @@ void insertionSort(int* pData, int n)
         int key = pData[i];
         int j = i - 1;
         while (j >= 0 && pData[j] > key) 
-		{
+		
+	{
             pData[j + 1] = pData[j];
             j = j - 1;
         }
@@ -105,9 +106,11 @@ void bubbleSort(int* pData, int n)
 	for (int i = 0; i < n - 1; i++) 
 	{
         for (int j = 0; j < n - i - 1; j++) 
-		{
+		
+	{
             if (pData[j] > pData[j + 1]) 
-			{
+			
+	    {
                 int temp = pData[j];
                 pData[j] = pData[j + 1];
                 pData[j + 1] = temp;
@@ -124,9 +127,11 @@ void selectionSort(int* pData, int n)
 	{
         int idx = i;
         for (int j = i + 1; j < n; j++) 
-		{
+		
+	{
             if (pData[j] < pData[idx]) 
-			{
+			
+	    {
                 idx = j;
             }
         }
